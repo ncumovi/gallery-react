@@ -26,15 +26,19 @@ function getDefaultModules() {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader!autoprefixer-loader?{browers:["last 2 version"]}'
       },
       {
         test: /\.sass/,
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
       },
       {
-        test: /\.scss/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+        test: /\.scss/, //自动添加厂商前缀
+        loader: 'style-loader!css-loader!autoprefixer-loader?{browers:["last 2 version"]}!sass-loader?outputStyle=expanded'
+      },
+      {
+        test: /\.json$/, //json-loader 加载json对象
+        loader: 'json-loader'
       },
       {
         test: /\.less/,

@@ -21,9 +21,9 @@ let config = Object.assign({}, baseConfig, {
     new BowerWebpackPlugin({
       searchResolveModulesDirectories: false
     }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),  //压缩js代码
+    new webpack.optimize.OccurenceOrderPlugin(), //使用频繁的代码提取压缩
+    new webpack.optimize.AggressiveMergingPlugin(), //合并相同代码
     new webpack.NoErrorsPlugin()
   ],
   module: defaultSettings.getDefaultModules()
