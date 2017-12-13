@@ -162,7 +162,7 @@ class AppComponent extends React.Component {
     }.bind(this);
   }
 
-  constructor(props) {
+  constructor(props) { //类似于vue Data数据 即getInitState
     super(props);
     this.inverse = this.inverse.bind(this);
     this.state = {
