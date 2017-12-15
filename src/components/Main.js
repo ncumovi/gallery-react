@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 //引入图片组件
 import ImgFigure from './ImgFigure.js';
 
+//引入控制器组件
+import ControllerUnit from './ControllerUnit.js';
+
 //获取相关图片的数据
 var imageDatas = require('../data/imageDatas.json');
 
@@ -241,7 +244,10 @@ class AppComponent extends React.Component {
 
       imgFigures.push(<ImgFigure data={element} ref={'imgFigure' + index}
            inverse={this.inverse(index)} key={index} arrange={this.state.imgsArranageArr[index]} center={this.center(index)}/>);
+
+      controllerUnits.push(<ControllerUnit key={index}/>);
     }, this);
+
     return (
       <section className='stage' ref='stage'>
         <section className='img-src'>
