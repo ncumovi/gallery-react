@@ -87,7 +87,7 @@ class AppComponent extends React.Component {
       vPosRangeX = vPosRange.x,
 
       imgsArrangeTopArr = [],  //上侧布局图片
-      topImgNum = Math.ceil(Math.random() * 2),  //一个或者没有
+      topImgNum = Math.floor(Math.random() * 2),  //一个或者没有
 
       topImgSpliceIndex = 0,
       imgsArrangeCenter = imgsArranageArr.splice(centerIndex, 1);
@@ -140,6 +140,7 @@ class AppComponent extends React.Component {
       }
 
     }
+
 
     //把截取出来的布局上侧以及中心的图片 放回去 还原整个图片数组
     if (imgsArrangeTopArr && imgsArrangeTopArr[0]) {
@@ -245,7 +246,7 @@ class AppComponent extends React.Component {
       imgFigures.push(<ImgFigure data={element} ref={'imgFigure' + index}
            inverse={this.inverse(index)} key={index} arrange={this.state.imgsArranageArr[index]} center={this.center(index)}/>);
 
-      controllerUnits.push(<ControllerUnit key={index}/>);
+      controllerUnits.push(<ControllerUnit key={index} arrange={this.state.imgsArranageArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>);
     }, this);
 
     return (
