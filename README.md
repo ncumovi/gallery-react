@@ -12,9 +12,10 @@ Live demo: https://ncumovi.github.io/gallery-react/
 
 ## Guideline
 
-icon文件引用的是阿里巴巴矢量图库
+icon文件引用的是阿里巴巴矢量图库 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_510621_gkv0t0kevfs9k9.css">
+*link rel="stylesheet" href="//at.alicdn.com/t/font_510621_gkv0t0kevfs9k9.css"
+
 
 ### Start for development
 npm start # or
